@@ -37,15 +37,13 @@ fi
 if [ ! -x "$(command -v assetfinder)" ]; then
        echo "[-] Assetfinder not found. Installing Assetfinder from https://github.com/tomnomnom/assetfinder "
        go get -u github.com/tomnomnom/assetfinder
-       echo "[+] Assetfiner installed. Re-run script."
-       exit 1
+       echo "[+] Assetfiner installed."     
 fi
 
 if [ ! -x "$(command -v httprobe)" ]; then
        echo "[-] Httprobe not found. Installing Httprobe from https://github.com/tomnomnom/httprobe "
        go get -u github.com/tomnomnom/httprobe
-       echo "[+] Httprobe installed. Re-run script."
-       exit 1
+       echo "[+] Httprobe installed."       
 fi
 
 if [ ! -x "$(command -v nmap)" ]; then
@@ -67,22 +65,19 @@ if [ ! -x "$(command -v nmap)" ]; then
        package="nmap"
        ${package_manager} ${package}
        
-       echo "[+] Nmap installed. Re-run script."
-       exit 1
+       echo "[+] Nmap installed."      
 fi
 
 if [ ! -x "$(command -v subjack)" ]; then
        echo "[-] Subjack not found. Please install Subjack from https://github.com/haccer/subjack "
        go get -u github.com/haccer/subjack
-       echo "[+] Subjack installed. Re-run script."
-       exit 1
+       echo "[+] Subjack installed."       
 fi
 
 if [ ! -x "$(command -v waybackurls)" ]; then
        echo "[-] Waybackurls not found. Please install Waybackurls from https://github.com/tomnomnom/waybackurls "
        go get -u github.com/tomnomnom/waybackurls
-       echo "[+] Waybackurls installed. Re-run script."
-       exit 1
+       echo "[+] Waybackurls installed."       
 fi
 
 echo "[+] Finding subdomains with Assetfinder ..."
