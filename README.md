@@ -7,7 +7,7 @@ GO - install go
    - add GOPATH to .bash_profile
    - export PATH=$PATH:$(go env GOPATH)/bin
    
-ASSETFINDER - go get -u github.com/tomnomnom/assetfinder
+ASSETFINDER - go get -u https://github.com/tomnomnom/assetfinder
             
 HTPROBE - go get -u  https://github.com/tomnomnom/httprobe
 
