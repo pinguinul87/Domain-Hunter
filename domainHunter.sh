@@ -1,5 +1,6 @@
 #!/bin/bash
 
+SECONDS=0
 target=$1
 
 if [ ! -d "~/$target" ];then
@@ -145,4 +146,6 @@ rm ~/$target/recon/wayback/extensions/json1.txt
 rm ~/$target/recon/wayback/extensions/php1.txt
 rm ~/$target/recon/wayback/extensions/aspx1.txt
 
+ELAPSED="Elapsed: $(($SECONDS / 3600))hrs $((($SECONDS / 60) % 60))min $(($SECONDS % 60))sec"
+echo $ELAPSED
 echo "[+] End of script."
