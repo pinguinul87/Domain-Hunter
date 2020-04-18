@@ -34,27 +34,53 @@ if [ ! -f "~/$target/recon/final.txt" ];then
 fi
 
 if [ ! -x "$(command -v assetfinder)" ]; then
-       echo "[-] Assetfinder not found. Please install Assetfinder from https://github.com/tomnomnom/assetfinder "
+       echo "[-] Assetfinder not found. Installing Assetfinder from https://github.com/tomnomnom/assetfinder "
+       go get -u github.com/tomnomnom/assetfinder
+       echo "[+] Assetfiner installed. Re-run script."
        exit 1
 fi
 
 if [ ! -x "$(command -v httprobe)" ]; then
-       echo "[-] Httprobe not found. Please install Httprobe from https://github.com/tomnomnom/httprobe "
+       echo "[-] Httprobe not found. Installing Httprobe from https://github.com/tomnomnom/httprobe "
+       go get -u github.com/tomnomnom/httprobe
+       echo "[+] Httprobe installed. Re-run script."
        exit 1
 fi
 
 if [ ! -x "$(command -v nmap)" ]; then
-       echo "[-] Nmap not found. Please install Nmap from https://nmap.org/download.html "
+       echo "[-] Nmap not found. Installing Nmap. "
+        
+       declare -A osInfo;
+       osInfo[/etc/debian_version]="apt-get install -y"
+       osInfo[/etc/alpine-release]="apk --update add"
+       osInfo[/etc/centos-release]="yum install -y"
+       osInfo[/etc/fedora-release]="dnf install -y"
+
+       for i in ${!osInfo[@]}
+       do
+            if [[ -f $i ]];then
+            package_manager=${osInfo[$i]}
+       fi
+       done
+
+       package="nmap"
+       ${package_manager} ${package}
+       
+       echo "[+] Nmap installed. Re-run script."
        exit 1
 fi
 
 if [ ! -x "$(command -v subjack)" ]; then
        echo "[-] Subjack not found. Please install Subjack from https://github.com/haccer/subjack "
+       go get -u github.com/haccer/subjack
+       echo "[+] Subjack installed. Re-run script."
        exit 1
 fi
 
 if [ ! -x "$(command -v waybackurls)" ]; then
        echo "[-] Waybackurls not found. Please install Waybackurls from https://github.com/tomnomnom/waybackurls "
+       go get -u github.com/tomnomnom/waybackurls
+       echo "[+] Waybackurls installed. Re-run script."
        exit 1
 fi
 
