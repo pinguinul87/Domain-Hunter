@@ -10,4 +10,8 @@ GO - install go
 ASSETFINDER - domain/subdomain finder written in GO, created by Tomnomnom
             - go get -u github.com/tomnomnom/assetfinder
             
-HTPROBE - probes http 
+HTPROBE - go get -u  https://github.com/tomnomnom/httprobe
+
+WAYBACKURLS - go get -u https://github.com/tomnomnom/waybackurls
+
+SUBJACK - go get -u https://github.com/haccer/subjack
