@@ -14,3 +14,5 @@ HTPROBE - go get -u  https://github.com/tomnomnom/httprobe
 WAYBACKURLS - go get -u https://github.com/tomnomnom/waybackurls
 
 SUBJACK - go get -u https://github.com/haccer/subjack
+
+NMAP - https://nmap.org/
