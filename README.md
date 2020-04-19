@@ -9,10 +9,12 @@ GO - install go
    
 ASSETFINDER - go get -u https://github.com/tomnomnom/assetfinder
             
-HTPROBE - go get -u  https://github.com/tomnomnom/httprobe
+HTTPROBE - go get -u  https://github.com/tomnomnom/httprobe
 
 WAYBACKURLS - go get -u https://github.com/tomnomnom/waybackurls
 
 SUBJACK - go get -u https://github.com/haccer/subjack
 
 NMAP - https://nmap.org/
+
+Special thank you to Tomnomnom!
