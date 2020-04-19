@@ -1,4 +1,8 @@
 #!/bin/bash
+: '
+This script needs to be executed with sudo/root privileges.
+Usage : ./domainHunter.sh <URL>
+'
 
 SECONDS=0
 target=$1
