@@ -3,30 +3,10 @@
 SECONDS=0
 target=$1
 
-if [ ! -d "~/$target" ];then
-    mkdir ~/$target
-fi
-if [ ! -d "~/$target/recon" ];then
-    mkdir ~/$target/recon
-fi
-if [ ! -d "~/$target/recon/scans" ];then
-    mkdir ~/$target/recon/scans
-fi
-if [ ! -d "~/$target/recon/httprobe" ];then
-    mkdir ~/$target/recon/httprobe
-fi
-if [ ! -d "~/$target/recon/potential_takeovers" ];then
-    mkdir ~/$target/recon/potential_takeovers
-fi
-if [ ! -d "~/$target/recon/wayback" ];then
-    mkdir ~/$target/recon/wayback
-fi
-if [ ! -d "~/$target/recon/wayback/params" ];then
-    mkdir ~$target/recon/wayback/params
-fi
-if [ ! -d "~/$target/recon/wayback/extensions" ];then
-    mkdir ~/$target/recon/wayback/extensions
-fi
+#Create directory structure, one line
+mkdir -p ~/$target/recon/{scans,httprobe,potential_takeovers,wayback/{params,extensions}}
+
+#Create alive.txt and final.txt 
 if [ ! -f "~/$target/recon/httprobe/alive.txt" ];then
     touch ~/$target/recon/httprobe/alive.txt
 fi
@@ -34,6 +14,7 @@ if [ ! -f "~/$target/recon/final.txt" ];then
     touch ~/$target/recon/final.txt
 fi
 
+#Check if all necessary tools are installed and istall them if not.
 if [ ! -x "$(command -v assetfinder)" ]; then
        echo "[-] Assetfinder not found. Installing Assetfinder from https://github.com/tomnomnom/assetfinder "
        go get -u github.com/tomnomnom/assetfinder
